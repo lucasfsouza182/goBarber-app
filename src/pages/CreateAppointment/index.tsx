@@ -76,7 +76,7 @@ const CreateAppointment: React.FC = () => {
         params: {
           year: selectedDate.getFullYear(),
           month: selectedDate.getMonth() + 1,
-          day: selectedDate.getDay(),
+          day: selectedDate.getDate(),
         },
       })
       .then((response) => {
@@ -142,7 +142,7 @@ const CreateAppointment: React.FC = () => {
       date.setHours(selectedHour);
       date.setMinutes(0);
 
-      await api.post('appointment', {
+      await api.post('appointments', {
         provider_id: selectedProvider,
         date,
       });
